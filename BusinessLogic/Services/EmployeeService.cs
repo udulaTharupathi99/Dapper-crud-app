@@ -54,6 +54,7 @@ namespace BusinessLogic.Services
         public async Task<EmployeeResponse> GetEmployee(int Id)
         { 
             var employee = await _dbService.GetAsync<Employee>(SQLQueries.GetEmployee, new { Id });
+            //var emp = _mapper.Map<EmployeeResponse>(employee);
             var emp = _mapper.Map<EmployeeResponse>(employee);
             return emp; 
         }
